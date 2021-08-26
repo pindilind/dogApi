@@ -3,7 +3,8 @@ const express = require('express')
 const server = express()
 const port = 3000
 
-server.use(express.json()) 
+server.use(express.json())
+
 
 server.get('/api', (req, res) => {
     let raw = fs.readFileSync("dogs.json") //hämtar url till jsonfil
@@ -11,9 +12,10 @@ server.get('/api', (req, res) => {
     res.json(dogItems) 
 })
 
+
 server.post('/api', (req, res) => {
     try {
-       /*  console.log(req.body)
+        /* console.log(req.body)
         res.json(req.body) */
         let raw = fs.readFileSync("dogs.json") //hämtar url till jsonfil
         let dogItems = JSON.parse(raw)
@@ -29,6 +31,7 @@ server.post('/api', (req, res) => {
     }
   })
 server.use(express.static('public'))
+/* server.use(express.static('data/img')); */
 
 server.listen(port, () => {
   console.log(`Applikationen fungerar, `)
