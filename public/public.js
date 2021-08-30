@@ -1,10 +1,24 @@
 
 let bodyDiv = document.getElementById('body') //hämtar bodydiven
-bodyDiv.style.display = "flex"
-bodyDiv.style.justifyContent = "center"
-bodyDiv.style.flexDirection = "column"
-bodyDiv.style.alignItems = "center"
 bodyDiv.style.overflow = "hidden"
+bodyDiv.style.display = "flex"
+bodyDiv.style.flexDirection = "row-reverse"
+bodyDiv.style.justifyContent = "space-evenly"
+
+
+let containerTwo = document.getElementById('containerTwo') //skapar ContainerTwo
+containerTwo.style.display = "flex"
+containerTwo.style.flexDirection = "column"
+containerTwo.style.alignItems = "center"
+/* containerTwo.style.marginTop = "-65px" */
+
+let containerOne = document.getElementById('containerOne') //skapar ContainerOne 
+containerOne.style.display = "flex"
+containerOne.style.flexDirection = "column"
+containerOne.style.alignItems = "center"
+containerOne.style.marginTop = "-65px"
+
+bodyDiv.appendChild(containerOne, containerTwo) //Appendar containerOne / containerTwo till body
 
 
 let getDogBtn = document.createElement('button') //skapar knapp
@@ -32,8 +46,9 @@ getDogBtn.style.color = "#9e2a2b";
 getDogBtn.style.marginTop = "-72px";
 getDogBtn.style.marginLeft = "0px";
 
-bodyDiv.appendChild(boneIcon)
-bodyDiv.appendChild(getDogBtn)
+bodyDiv.appendChild(containerOne)
+containerOne.appendChild(boneIcon)
+containerOne.appendChild(getDogBtn)
 getDogBtn.appendChild(getDogText)
 /* getDogBtn.appendChild(boneIcon)  */
 
