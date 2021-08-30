@@ -27,6 +27,12 @@ server.post('/api', (req, res) => {
       res.status(500).json(false)
     }
   })
+
+  server.delete('/api', (req, res) => {
+    res.send("DELETE Request Called")
+  })
+
+
 server.use(express.static('public'))
 /* server.use(express.static('data/img')); */
 
