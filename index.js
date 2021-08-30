@@ -15,15 +15,12 @@ server.get('/api', (req, res) => {
 
 server.post('/api', (req, res) => {
     try {
-        /* console.log(req.body)
-        res.json(req.body) */
         let raw = fs.readFileSync("dogs.json") //hämtar url till jsonfil
         let dogItems = JSON.parse(raw)
         console.log(dogItems)
         dogItems.push(req.body)
         fs.writeFileSync("dogs.json", JSON.stringify(dogItems))
         res.json(true)
-  
   
     } catch(err) {
       console.error(err)
@@ -34,5 +31,5 @@ server.use(express.static('public'))
 /* server.use(express.static('data/img')); */
 
 server.listen(port, () => {
-  console.log(`Applikationen fungerar, `)
+  console.log(`Voff! The application is working `)
 })

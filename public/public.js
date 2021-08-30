@@ -76,39 +76,64 @@ getDogBtn.onclick = async function() { //onclick funktion
         document.body.innerHTML = "<h1>Det gick inte att hämta</h1>"
     }  
      
-      /*   fetchImg() */
+    
     } 
 
 
- /* async function fetchImg() {
-        const imageUrl = "https://dog.ceo/api/breeds/image/random";
+ let btnDiv = document.createElement("div")
 
-        const response = await fetch(imageUrl)
-        const result = await response.json()
+let saveTodoBtn = document.createElement('button') //skapar knapp
+let saveTodoText = document.createElement('h4') // skapar h4
+saveTodoText.innerText = "Spara" //skriver text på knapp
 
-    } */
+containerTwo.appendChild(btnDiv)
+btnDiv.appendChild(saveTodoBtn)
+saveTodoBtn.appendChild(saveTodoText)
 
-/* let saveDogBtn = document.createElement('button') //skapar knapp
-let saveDogText = document.createElement('h4') // skapar h4
-saveDogText.innerText = "Spara" //skriver text på knapp
+saveTodoBtn.onclick = async function() { //onclick funktion
 
-bodyDiv.appendChild(saveDogBtn)
-saveDogBtn.appendChild(saveDogText)
+    let taskInput = document.getElementById('someValue').value
+    console.log(taskInput)
+    
+    const status = await makeRequest("http://localhost:3000/api", "POST", {dogItems: taskInput})
+    console.log(status)    
 
-saveDogBtn.onclick = async function() { //onclick funktion
-
-    dogItems = ""
-    const response = await makeRequest("http://localhost:3000/api", "POST", JSON.stringify({dogItems}))
-    console.log(response)    
 }
- */
+
+let getToDoBtn = document.createElement('button') //skapar knapp
+let getToDoText = document.createElement('h4') // skapar h4
+getToDoText.innerText = 'Hämtar ToDo' //skriver text på knapp
+
+
+containerTwo.appendChild(btnDiv)
+btnDiv.appendChild(getToDoBtn)
+getToDoBtn.appendChild(getToDoText)
+
+    getToDoBtn.onclick = async function() { //onclick funktion 
+
+        const displayToDo = await makeRequest("http://localhost:3000/api", "GET")
+        console.log(displayToDo)
+
+        for (let i = 0; i < displayToDo.length; i++) {
+            const element = document.createElement('li')
+            element.innerText = displayToDo[i].dogItems
+            console.log(displayToDo[i])
+            
+            document.getElementById('toDoDiv').appendChild(element)
+    
+        } 
+
+
+    }
+    
+
 
 async function makeRequest(url, method, body) {
     try {
         const response = await fetch(url, {
             headers: {"Content-Type": "application/json"},
             method,
-            body
+            body: JSON.stringify(body)
         })
         console.log(response)
         const result = await response.json()

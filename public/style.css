@@ -1,6 +1,29 @@
 
-#headtext {
-    font-family: 'Wire One', sans-serif;
-    font-size: 300px;
-    color: red;
+#hStyle {
+    color: #9e2a2b; 
+    font-family: Wire One; 
+    font-size: 100px;
+}
+
+.fa-bone {
+    color: #fff3b0;
+    font-size: 70px;
+}
+
+#imgDiv {
+    margin-top: -25px; 
+    min-height: 300px;
+    display: flex; 
+    justify-content: center;
+}
+
+
+#outPut {
+    color: #e09f3e; 
+    font-family: Wire One; 
+    font-size: 50px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: -90px;
 }
