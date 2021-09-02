@@ -10,7 +10,6 @@ let containerTwo = document.getElementById('containerTwo') //skapar ContainerTwo
 containerTwo.style.display = "flex"
 containerTwo.style.flexDirection = "column"
 containerTwo.style.alignItems = "center"
-/* containerTwo.style.marginTop = "-65px" */
 
 let containerOne = document.getElementById('containerOne') //skapar ContainerOne 
 containerOne.style.display = "flex"
@@ -49,16 +48,17 @@ containerOne.appendChild(getDogBtn)
 getDogBtn.appendChild(getDogText)
 
 
-getDogBtn.onclick = async function() { //onclick funktion
+getDogBtn.onclick = async function () { //onclick funktion
 
     document.getElementById('imgDiv').innerHTML = ""; //kod rensa div
+
     try {
-    let response = await fetch("https://dog.ceo/api/breeds/image/random")
-      let body = await response.json()
+        let response = await fetch("https://dog.ceo/api/breeds/image/random")
+        let body = await response.json()
         console.log(body)
 
         document.getElementById('imgDiv').innerHTML = ""; //kod rensa div
-        
+
         let img = document.createElement('img')
         img.style.maxHeight = "300px"
         img.style.maxWidth = "300px"
@@ -68,16 +68,16 @@ getDogBtn.onclick = async function() { //onclick funktion
         img.style.objectFit = "cover";
         img.src = body.message//hämtar fetch
 
-       document.getElementById('imgDiv').appendChild(img)
+        document.getElementById('imgDiv').appendChild(img)
 
-       
-    } catch(err) {
+
+    } catch (err) {
         console.log(err)
         document.body.innerHTML = "<h1>Det gick inte att hämta</h1>"
-    }  
-     
-    
-    } 
+    }
+
+
+}
 
 
 let btnDiv = document.createElement("div")
@@ -99,13 +99,13 @@ containerTwo.appendChild(btnDiv)
 btnDiv.appendChild(saveTodoBtn)
 saveTodoBtn.appendChild(saveTodoText)
 
-saveTodoBtn.onclick = async function() { //onclick funktion
+saveTodoBtn.onclick = async function () { //onclick funktion
 
-    let taskInput = document.getElementById('someValue').value
-    console.log(taskInput)
-    
-    const status = await makeRequest("http://localhost:3000/api", "POST", {dogItems: taskInput})
-    console.log(status)    
+    let tasks = document.getElementById('someValue').value
+    console.log(tasks)
+
+    const status = await makeRequest("http://localhost:3000/api", "POST", { todolist: tasks })
+    console.log(status)
 
 }
 
@@ -128,38 +128,38 @@ getToDoBtn.style.fontSize = "25px";
 
 
 
-    getToDoBtn.onclick = async function() { //onclick funktion 
+getToDoBtn.onclick = async function () { //onclick funktion 
 
-        const displayToDo = await makeRequest("http://localhost:3000/api", "GET")
-        console.log(displayToDo)
+    const displayToDo = await makeRequest("http://localhost:3000/api", "GET")
+    console.log(displayToDo)
 
-        document.getElementById('toDoDiv').innerHTML = "";
+    document.getElementById('toDoDiv').innerHTML = "";
 
-        for (let i = 0; i < displayToDo.length; i++) {
-            const element = document.createElement('li')
-            element.innerText = displayToDo[i].dogItems
-            console.log(displayToDo[i])
-            
-            document.getElementById('toDoDiv').appendChild(element)
-    
-        } 
+    for (let i = 0; i < displayToDo.length; i++) {
+        const element = document.createElement('li')
+        element.innerText = displayToDo[i].todolist
+        console.log(displayToDo[i])
 
+        document.getElementById('toDoDiv').appendChild(element)
 
     }
-    
+
+
+}
+
 
 
 async function makeRequest(url, method, body) {
     try {
         const response = await fetch(url, {
-            headers: {"Content-Type": "application/json"},
+            headers: { "Content-Type": "application/json" },
             method,
             body: JSON.stringify(body)
         })
         console.log(response)
         const result = await response.json()
         return result
-    }catch(err) {
+    } catch (err) {
         console.error(err)
     }
 }

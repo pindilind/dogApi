@@ -7,19 +7,19 @@ server.use(express.json())
 
 
 server.get('/api', (req, res) => {
-    let raw = fs.readFileSync("dogs.json") //hämtar url till jsonfil
-    let dogItems = JSON.parse(raw)
-    res.json(dogItems) 
+    let raw = fs.readFileSync("dogTodos.json") //hämtar url till jsonfil
+    let todolist = JSON.parse(raw)
+    res.json(todolist) 
 })
 
 
 server.post('/api', (req, res) => {
     try {
-        let raw = fs.readFileSync("dogs.json") //hämtar url till jsonfil
-        let dogItems = JSON.parse(raw)
-        console.log(dogItems)
-        dogItems.push(req.body)
-        fs.writeFileSync("dogs.json", JSON.stringify(dogItems))
+        let raw = fs.readFileSync("dogTodos.json") //hämtar url till jsonfil
+        let todolist = JSON.parse(raw)
+        console.log(todolist)
+        todolist.push(req.body)
+        fs.writeFileSync("dogTodos.json", JSON.stringify(todolist))
         res.json(true)
   
     } catch(err) {
