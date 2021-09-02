@@ -7,10 +7,10 @@ Ett skolprojekt uppbyggt i Express och NodeJS där man kan hämta söta hundar o
 
 ## Installation
 
-**Node** ha med installation?
+Ha senaste versionen av **Node** installerad.
 
-**Nodemon**
-1. Skriv **_npm installera -g nodemon_** i terminalen för att installera Nodemon lokalt på din dator. (programmet uppdaterar node automatiskt)
+1. Skriv **_npm install -g nodemon_** i terminalen för att installera Nodemon lokalt på din dator. (programmet uppdaterar node automatiskt)
+2. **_npm install_** för att installera projeketet.
 
 ## Starta projektet
 
@@ -18,8 +18,6 @@ Ett skolprojekt uppbyggt i Express och NodeJS där man kan hämta söta hundar o
 2. Skriv **_nodemon index.js_** i terminelen för att starta nodemon på serverfilen index.js.
 
 ***JIPPIE! Projektet är igång!*** :D
-
-
 
 ## Övrig information
 

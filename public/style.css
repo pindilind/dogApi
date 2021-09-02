@@ -27,7 +27,8 @@
     align-items: center; 
     margin-top: -90px;
 }
-#output {
+#textDiv {
+    color: #e09f3e; 
     font-family: Wire One;
     font-size: 29px;
     display: flex;
@@ -35,6 +36,14 @@
     align-items: center;
     margin-top: 30px;
 }    
+
+#unTitle{
+    color: #9e2a2b; 
+    font-family: Wire One;
+    font-size: 60px;
+    margin-top: -30px;
+}    
+
 
 #someValue{
     border-radius: 5px;
@@ -56,4 +65,15 @@
     border-radius: 5px;
     padding: 10px;
     font-weight: bold;
+}
+
+
+#iconOne {
+    color: #fff3b0; 
+    font-size: 50px;
+}
+
+#iconTwo {
+    color: #fff3b0; 
+    font-size: 50px;
 }

@@ -88,9 +88,9 @@ let saveTodoText = document.createElement('h4') // skapar h4
 saveTodoText.innerText = "SAVE" //skriver text på knapp
 
 saveTodoBtn.style.border = "none";
-saveTodoBtn.style.backgroundColor = "#fff3b0";
+saveTodoBtn.style.backgroundColor = "#540b0e";
 saveTodoBtn.style.color = "#9e2a2b";
-saveTodoBtn.style.marginTop = "-20px";
+saveTodoBtn.style.marginTop = "-30px";
 saveTodoBtn.style.fontFamily = "Wire One";
 saveTodoBtn.style.fontSize = "25px";
 
@@ -100,13 +100,18 @@ btnDiv.appendChild(saveTodoBtn)
 saveTodoBtn.appendChild(saveTodoText)
 
 saveTodoBtn.onclick = async function () { //onclick funktion
-
+    
     let tasks = document.getElementById('someValue').value
     console.log(tasks)
 
     const status = await makeRequest("http://localhost:3000/api", "POST", { todolist: tasks })
     console.log(status)
 
+    /* if(tasks == "") {
+        alert("Please enter your task! :) ")
+    }  */
+
+    document.getElementById('someValue').value = "";
 }
 
 let getToDoBtn = document.createElement('button') //skapar knapp
@@ -119,12 +124,13 @@ btnDiv.appendChild(getToDoBtn)
 getToDoBtn.appendChild(getToDoText)
 
 getToDoBtn.style.border = "none";
-getToDoBtn.style.backgroundColor = "#fff3b0";
+getToDoBtn.style.backgroundColor = "#540b0e";
 getToDoBtn.style.color = "#9e2a2b";
 getToDoBtn.style.marginTop = "-72px";
 getToDoBtn.style.marginLeft = "0px";
 getToDoBtn.style.fontFamily = "Wire One";
 getToDoBtn.style.fontSize = "25px";
+getToDoBtn.style.height = "30px";
 
 
 
@@ -146,6 +152,8 @@ getToDoBtn.onclick = async function () { //onclick funktion
 
 
 }
+
+
 
 
 
