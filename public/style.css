@@ -27,3 +27,25 @@
     align-items: center; 
     margin-top: -90px;
 }
+
+#someValue{
+    border-radius: 5px;
+    border: none;
+    width: 170px;
+    height: 32px;
+    font-family: Wire One;
+    font-size: 27px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#toDoDiv {
+    background-color: #e09f3e;
+    font-family: Wire One;
+    font-size: 20px;
+    margin-top: -20px;
+    width: 200px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+}
