@@ -1,4 +1,4 @@
-#DOG API 🐶
+#DOG API
 ***
 
 *Skapad av: Linda **|** Betygsnivå: G* **|** Länk till GitHub-repo: https://github.com/pindilind/dogApi
