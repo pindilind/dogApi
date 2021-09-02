@@ -1,18 +1,18 @@
-#DOG API
+# DOG API
 ***
 
 *Skapad av: Linda **|** Betygsnivå: G* **|** Länk till GitHub-repo: https://github.com/pindilind/dogApi
 
 Ett skolprojekt uppbyggt i Express och NodeJS där man kan hämta söta hundar och skapa en todo-lista.
 
-##Installation
+## Installation
 ***
 **Node** ha med installation?
 
 **Nodemon**
 1. Skriv **_npm installera -g nodemon_** i terminalen för att installera Nodemon lokalt på din dator. (programmet uppdaterar node automatiskt)
 
-##Starta projektet
+## Starta projektet
 ***
 1. Skriv **_npm start_** i terminalen för att se **"Voff! The application is working"**.
 2. Skriv **_nodemon index.js_** i terminelen för att starta nodemon på serverfilen index.js.
@@ -21,12 +21,12 @@ Ett skolprojekt uppbyggt i Express och NodeJS där man kan hämta söta hundar o
 
 
 
-##Övrig information
+## Övrig information
 ***
 
 **Länk till GitHub-repo:** https://github.com/pindilind/dogApi
 
-##Krav
+## Krav
 ***
 Krav för **GODKÄNT**:
 
