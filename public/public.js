@@ -100,16 +100,16 @@ btnDiv.appendChild(saveTodoBtn)
 saveTodoBtn.appendChild(saveTodoText)
 
 saveTodoBtn.onclick = async function () { //onclick funktion
-    
+
     let tasks = document.getElementById('someValue').value
-    console.log(tasks)
 
-    const status = await makeRequest("http://localhost:3000/api", "POST", { todolist: tasks })
-    console.log(status)
-
-    /* if(tasks == "") {
+    if (tasks == "") {
         alert("Please enter your task! :) ")
-    }  */
+    } else {
+        const status = await makeRequest("http://localhost:3000/api", "POST", { todolist: tasks })
+        console.log(status)
+    }
+
 
     document.getElementById('someValue').value = "";
 }
