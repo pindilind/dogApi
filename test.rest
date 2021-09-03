@@ -9,6 +9,3 @@ Content-Type: application/json
     "todolist": "by dog candy"
 }
 
-###
-
-DELETE http://localhost:3000/api
